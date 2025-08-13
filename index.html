@@ -1,28 +1,383 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marek's Portfolio</title>
+    <title>Mario Sica - Full Stack Developer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #ffffff;
+            font-size: 11pt;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 50px;
+            background-color: white;
+        }
+        
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+            color: #1a1a1a;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            color: #2563eb;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 13px;
+            color: #4a4a4a;
+        }
+        
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .contact-info a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Sections */
+        section {
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 4px;
+        }
+        
+        h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #1a1a1a;
+        }
+        
+        h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2563eb;
+            margin-bottom: 5px;
+        }
+        
+        /* Summary */
+        .summary {
+            font-size: 13px;
+            line-height: 1.8;
+            color: #3a3a3a;
+            text-align: justify;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category h4 {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .skill-category p {
+            font-size: 12px;
+            line-height: 1.6;
+            color: #4a4a4a;
+        }
+        
+        /* Experience */
+        .experience-item {
+            margin-bottom: 20px;
+            page-break-inside: avoid;
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+            flex-wrap: wrap;
+        }
+        
+        .company-info {
+            font-size: 14px;
+            color: #6a6a6a;
+            margin-bottom: 8px;
+        }
+        
+        .date {
+            font-size: 13px;
+            color: #6a6a6a;
+            font-style: italic;
+        }
+        
+        .project-name {
+            font-weight: 600;
+            color: #2563eb;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+        
+        li {
+            font-size: 12px;
+            line-height: 1.6;
+            margin-bottom: 3px;
+            color: #3a3a3a;
+        }
+        
+        /* Projects */
+        .project-item {
+            margin-bottom: 10px;
+        }
+        
+        .project-item h3 {
+            font-size: 14px;
+            margin-bottom: 3px;
+        }
+        
+        .project-item p {
+            font-size: 12px;
+            color: #4a4a4a;
+            margin-left: 20px;
+        }
+        
+        /* Education */
+        .education-item {
+            margin-bottom: 15px;
+        }
+        
+        .certification-list {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .certification-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .certification-list li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+        }
+        
+        strong {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        
+        /* Print styles */
+        @media print {
+            body {
+                font-size: 10pt;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            h2 {
+                font-size: 16px;
+            }
+            
+            h3 {
+                font-size: 14px;
+            }
+            
+            .contact-info a {
+                color: #1a1a1a;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Marek's Portfolio</h1>
-        <h2>A Full-Stack Developer's Portfolio</h2>
+    <div class="container">
+        <header>
+            <h1>MARIO SICA</h1>
+            <p class="subtitle">Full Stack Developer | Freelancer</p>
+            <div class="contact-info">
+                <span>📧 hello@mariosica.com</span>
+                <span>📱 +39 392 607 0003</span>
+                <span>🔗 <a href="https://linkedin.com/in/mario-sica">LinkedIn - /mario-sica</a></span>
+                <span>💻 <a href="https://github.com/mario-sica">GitHub - /mario-sica</a></span>
+                <span>📍 San Ferdinando di Puglia (BT), Italy</span>
+            </div>
+            <div class="contact-info" style="margin-top: 10px;">
+                <strong>Available for remote projects worldwide</strong>
+            </div>
+        </header>
 
-        <hr />
+        <section>
+            <h2>Professional Summary</h2>
+            <div class="summary">
+                Full Stack Developer with a pragmatic approach to solving complex problems. My experience focuses on designing and implementing modern, scalable architectures with particular attention to performance optimization. Throughout my professional journey, I have demonstrated the ability to transform complex business requirements into effective technical solutions, achieving measurable improvements such as up to 70% reduction in system response times. I work effectively both independently and in teams, with a natural inclination for continuous learning and adopting industry best practices. My goal is to create software that not only works but truly makes a difference for clients and end users.
+            </div>
+        </section>
 
-        <h2><a href="./public/cartonianimati.html">I miei Cartoni Animati preferiti</a></h2>
-            <a href="./public/cartonianimati.html">
-                <img src="./assets/images/cartonianimati.png" alt="screenshot sito web sui miei cartoni animati preferiti" height="200">
-            </a>
-        <h2><a href="./public/compleanno-luisa.html">Il Compleanno di Luisa</a></h2>
-            <a href="./public/compleanno-luisa.html">
-                <img src="./assets/images/compleanno-luisa.png" alt="biglietto per il compleanno di Luisa" height="200">
-            </a>
-        
-            <hr />
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Frontend Development</h4>
+                    <p><strong>Languages:</strong> JavaScript (ES6+), TypeScript, HTML5, CSS3</p>
+                    <p><strong>Frameworks:</strong> React.js, Angular, Redux, Redux Toolkit, Redux Thunk</p>
+                    <p><strong>Tools:</strong> Webpack, npm, nvm</p>
+                    <p><strong>Styling:</strong> TailwindCSS, Bootstrap</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Backend Development</h4>
+                    <p><strong>Languages:</strong> Node.js, Python (Flask)</p>
+                    <p><strong>API:</strong> RESTful API design</p>
+                    <p><strong>Database:</strong> SQL, NoSQL</p>
+                    <p><strong>Architecture:</strong> Microservices, MVC</p>
+                </div>
+                <div class="skill-category">
+                    <h4>DevOps & Tools</h4>
+                    <p><strong>Containerization:</strong> Docker, Docker Compose</p>
+                    <p><strong>Version Control:</strong> Git, GitHub, Git Flow</p>
+                    <p><strong>CI/CD:</strong> GitHub Actions, Nginx</p>
+                    <p><strong>Methodologies:</strong> Agile/SCRUM</p>
+                </div>
+            </div>
+        </section>
 
-        <a href="./public/about.html">Su di me</a>
-        <a href="./public/contact.html">Contattami</a>    
+        <section>
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="date">May 2025 - Present</span>
+                </div>
+                <p class="company-info"><strong>Santech s.a.s.</strong> | Remote</p>
+                <p class="project-name">Project: QUOTO - Quotation Management Platform</p>
+                <ul>
+                    <li>Resolved critical race condition in GraphQL service by implementing local instances</li>
+                    <li>Optimized UI components and responsive layouts for parametric platform</li>
+                    <li>Continuous frontend code refactoring for improved performance and maintainability</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="date">November 2024 - April 2025</span>
+                </div>
+                <p class="company-info"><strong>Santech s.a.s.</strong> | Remote</p>
+                <p class="project-name">Project: SANTI F.LLI MANAGER - Meat Industry Management System</p>
+                <ul>
+                    <li>Refactored management system for complete production cycle (purchasing, processing, storage, sales)</li>
+                    <li>Optimized Python Flask microservices reducing API response times by up to 70%</li>
+                    <li>Implemented micro-frontend architecture with React and Angular for modularity</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="date">May 2024 - October 2024</span>
+                </div>
+                <p class="company-info"><strong>Personal</strong> | Remote</p>
+                <p class="project-name">Project: StayFit - Fitness Professional Management System</p>
+                <ul>
+                    <li>Co-developed platform for nutritionists and personal trainers in team of 3 developers</li>
+                    <li>Implemented database with 900+ foods and 100+ categorized exercises</li>
+                    <li>Developed personalized meal plan generation system with progress tracking</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            
+            <div class="project-item">
+                <h3>AirBnB Clone</h3>
+                <p>Full-stack replica with booking system and user management (React, Node.js, MongoDB)</p>
+            </div>
+
+            <div class="project-item">
+                <h3>Psychologist Booking Platform</h3>
+                <p>Booking system with interactive calendar and automated notifications (React, Node.js, PostgreSQL)</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education & Certifications</h2>
+            
+            <div class="education-item">
+                <ul class="certification-list">
+                    <li><strong>Full Stack Developer Certificate</strong> - Develhope (2024)</li>
+                    <li><strong>Full Stack Web Development Bootcamp</strong> - Angela Yu/Udemy (2024)</li>
+                    <li><strong>English Language Certification C1/C2</strong></li>
+                    <li><strong>PEKIT Expert</strong> - IT Certification</li>
+                    <li><strong>AFM Technical Diploma</strong> - Istituto Santo Stefano (2023)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Soft Skills</h2>
+            <p><strong>Leadership:</strong> Independent project management and small team coordination | <strong>Problem Solving:</strong> Analytical approach | <strong>Communication:</strong> Effective client and stakeholder interface | <strong>Time Management:</strong> Multiple deadline management | <strong>English:</strong> C1/C2 fluent</p>
+        </section>
+
+        <section>
+            <h2>Availability</h2>
+            <p>Remote freelance projects • Flexible timezone (CET/CEST) • Active GitHub portfolio with daily contributions</p>
+        </section>
+    </div>
 </body>
 </html>
